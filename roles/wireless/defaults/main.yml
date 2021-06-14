@@ -1,0 +1,29 @@
+---
+openwrt_wireless_disabled: 0
+openwrt_wireless_2_4g_disabled: "{{ openwrt_wireless_disabled }}"
+openwrt_wireless_5g_disabled: "{{ openwrt_wireless_disabled }}"
+
+openwrt_wireless_channel: auto
+openwrt_wireless_2_4g_channel: "{{ openwrt_wireless_channel }}"
+openwrt_wireless_5g_channel: "{{ openwrt_wireless_channel }}"
+
+openwrt_wireless_2_4g_country: "{{ openwrt_wireless_country | default(omit) }}"
+openwrt_wireless_5g_country: "{{ openwrt_wireless_country | default(omit) }}"
+
+openwrt_wireless_2_4g_ssid: "{{ openwrt_wireless_ssid | default(omit) }}"
+openwrt_wireless_5g_ssid: "{{ openwrt_wireless_ssid | default(omit) }}"
+
+openwrt_wireless_2_4g_encryption: "{{ openwrt_wireless_encryption | default(omit) }}"
+openwrt_wireless_5g_encryption: "{{ openwrt_wireless_encryption | default(omit) }}"
+
+openwrt_wireless_2_4g_key: "{{ openwrt_wireless_key | default(omit) }}"
+openwrt_wireless_5g_key: "{{ openwrt_wireless_key | default(omit) }}"
+
+openwrt_wireless_2_4g_hidden: "{{ openwrt_wireless_hidden | default(omit) }}"
+openwrt_wireless_5g_hidden: "{{ openwrt_wireless_hidden | default(omit) }}"
+
+openwrt_wireless_2_4g_isolate: "{{ openwrt_wireless_isolate | default(omit) }}"
+openwrt_wireless_5g_isolate: "{{ openwrt_wireless_isolate | default(omit) }}"
+
+openwrt_wireless_2_4g_ieee80211r: "{{ openwrt_wireless_ieee80211r | default(omit) }}"
+openwrt_wireless_5g_ieee80211r: "{{ openwrt_wireless_ieee80211r | default(omit) }}"

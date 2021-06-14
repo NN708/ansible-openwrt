@@ -1,0 +1,35 @@
+---
+- include_tasks: radio.yml
+  when: openwrt_wireless_2_4g_disabled != 1
+  vars:
+    _openwrt_wireless:
+      radio: radio0
+      disabled: "{{ openwrt_wireless_2_4g_disabled }}"
+      channel: "{{ openwrt_wireless_2_4g_channel }}"
+      country: "{{ openwrt_wireless_2_4g_country }}"
+      ssid: "{{ openwrt_wireless_2_4g_ssid }}"
+      encryption: "{{ openwrt_wireless_2_4g_encryption }}"
+      key: "{{ openwrt_wireless_2_4g_key }}"
+      hidden: "{{ openwrt_wireless_2_4g_hidden }}"
+      isolate: "{{ openwrt_wireless_2_4g_isolate }}"
+      ieee80211r: "{{ openwrt_wireless_2_4g_ieee80211r }}"
+
+- include_tasks: radio.yml
+  when: openwrt_wireless_5g_disabled != 1
+  vars:
+    _openwrt_wireless:
+      radio: radio1
+      disabled: "{{ openwrt_wireless_5g_disabled }}"
+      channel: "{{ openwrt_wireless_5g_channel }}"
+      country: "{{ openwrt_wireless_5g_country }}"
+      ssid: "{{ openwrt_wireless_5g_ssid }}"
+      encryption: "{{ openwrt_wireless_5g_encryption }}"
+      key: "{{ openwrt_wireless_5g_key }}"
+      hidden: "{{ openwrt_wireless_5g_hidden }}"
+      isolate: "{{ openwrt_wireless_5g_isolate }}"
+      ieee80211r: "{{ openwrt_wireless_5g_ieee80211r }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: setup wifi

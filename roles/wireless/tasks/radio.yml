@@ -1,0 +1,25 @@
+---
+- name: Configure Wi-Fi device
+  uci:
+    command: set
+    key: "wireless.{{ _openwrt_wireless.radio }}"
+    value:
+      disabled: "{{ _openwrt_wireless.disabled }}"
+      channel: "{{ _openwrt_wireless.channel }}"
+      country: "{{ _openwrt_wireless.country }}"
+
+- name: Configure Wi-Fi interface
+  uci:
+    command: section
+    config: wireless
+    type: wifi-iface
+    find:
+      device: "{{ _openwrt_wireless.radio }}"
+      mode: ap
+    value:
+      ssid: "{{ _openwrt_wireless.ssid }}"
+      encryption: "{{ _openwrt_wireless.encryption }}"
+      key: "{{ _openwrt_wireless.key }}"
+      hidden: "{{ _openwrt_wireless.hidden }}"
+      isolate: "{{ _openwrt_wireless.isolate }}"
+      ieee80211r: "{{ _openwrt_wireless.ieee80211r }}"
