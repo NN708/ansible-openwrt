@@ -1,0 +1,33 @@
+---
+- name: Remove wpad-basic
+  opkg:
+    name: wpad-basic
+    state: absent
+
+- name: Install wpad
+  opkg:
+    name: wpad
+    state: present
+
+- include_tasks: radio.yml
+  when: openwrt_wireless_2_4g_disabled != 1
+  vars:
+    _openwrt_wireless:
+      radio: radio0
+      auth_server: "{{ openwrt_wireless_2_4g_auth_server }}"
+      auth_port: "{{ openwrt_wireless_2_4g_auth_port }}"
+      auth_secret: "{{ openwrt_wireless_2_4g_auth_secret }}"
+
+- include_tasks: radio.yml
+  when: openwrt_wireless_5g_disabled != 1
+  vars:
+    _openwrt_wireless:
+      radio: radio1
+      auth_server: "{{ openwrt_wireless_5g_auth_server }}"
+      auth_port: "{{ openwrt_wireless_5g_auth_port }}"
+      auth_secret: "{{ openwrt_wireless_5g_auth_secret }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: setup wifi

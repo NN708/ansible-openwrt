@@ -1,0 +1,13 @@
+---
+- name: Configure Wi-Fi enterprise encryption
+  uci:
+    command: section
+    config: wireless
+    type: wifi-iface
+    find:
+      device: "{{ _openwrt_wireless.radio }}"
+      mode: ap
+    value:
+      auth_server: "{{ _openwrt_wireless.auth_server }}"
+      auth_port: "{{ _openwrt_wireless.auth_port }}"
+      auth_secret: "{{ _openwrt_wireless.auth_secret }}"

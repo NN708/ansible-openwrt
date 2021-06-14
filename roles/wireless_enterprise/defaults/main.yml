@@ -1,0 +1,13 @@
+---
+openwrt_wireless_disabled: 0
+openwrt_wireless_2_4g_disabled: "{{ openwrt_wireless_disabled }}"
+openwrt_wireless_5g_disabled: "{{ openwrt_wireless_disabled }}"
+
+openwrt_wireless_2_4g_auth_server: "{{ openwrt_wireless_auth_server | default(omit) }}"
+openwrt_wireless_5g_auth_server: "{{ openwrt_wireless_auth_server | default(omit) }}"
+
+openwrt_wireless_2_4g_auth_port: "{{ openwrt_wireless_auth_port | default(omit) }}"
+openwrt_wireless_5g_auth_port: "{{ openwrt_wireless_auth_port | default(omit) }}"
+
+openwrt_wireless_2_4g_auth_secret: "{{ openwrt_wireless_auth_secret | default(omit) }}"
+openwrt_wireless_5g_auth_secret: "{{ openwrt_wireless_auth_secret | default(omit) }}"
