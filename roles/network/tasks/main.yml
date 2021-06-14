@@ -1,0 +1,36 @@
+---
+- name: Configure ULA-prefix
+  uci:
+    command: set
+    key: "network.globals"
+    value:
+      ula_prefix: "{{ openwrt_network_ula_prefix | default(omit) }}"
+
+- include_tasks: interface.yml
+  vars:
+    _openwrt_network:
+      interface: lan
+      proto: "{{ openwrt_network_lan_proto | default(omit) }}"
+      ipaddr: "{{ openwrt_network_lan_ipaddr | default(omit) }}"
+      netmask: "{{ openwrt_network_lan_netmask | default(omit) }}"
+      gateway: "{{ openwrt_network_lan_gateway | default(omit) }}"
+      dns: "{{ openwrt_network_lan_dns | default(omit) }}"
+      username: "{{ openwrt_network_lan_username | default(omit) }}"
+      password: "{{ openwrt_network_lan_password | default(omit) }}"
+
+- include_tasks: interface.yml
+  vars:
+    _openwrt_network:
+      interface: wan
+      proto: "{{ openwrt_network_wan_proto | default(omit) }}"
+      ipaddr: "{{ openwrt_network_wan_ipaddr | default(omit) }}"
+      netmask: "{{ openwrt_network_wan_netmask | default(omit) }}"
+      gateway: "{{ openwrt_network_wan_gateway | default(omit) }}"
+      dns: "{{ openwrt_network_wan_dns | default(omit) }}"
+      username: "{{ openwrt_network_wan_username | default(omit) }}"
+      password: "{{ openwrt_network_wan_password | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: reload network

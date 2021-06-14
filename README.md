@@ -20,6 +20,7 @@ Ansible collection to configure your OpenWrt devices more quickly and automatica
 
 This collection includes these roles:
 
++ [nn708.openwrt.network](https://github.com/NN708/ansible-openwrt/tree/master/roles/network)
 + [nn708.openwrt.system](https://github.com/NN708/ansible-openwrt/tree/master/roles/system)
 + [nn708.openwrt.wireless](https://github.com/NN708/ansible-openwrt/tree/master/roles/wireless)
 + [nn708.openwrt.wireless_enterprise](https://github.com/NN708/ansible-openwrt/tree/master/roles/wireless_enterprise)

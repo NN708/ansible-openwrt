@@ -1,0 +1,13 @@
+---
+- name: Configure network interface
+  uci:
+    command: set
+    key: "network.{{ _openwrt_network.interface }}"
+    value:
+      proto: "{{ _openwrt_network.proto }}"
+      ipaddr: "{{ _openwrt_network.ipaddr }}"
+      netmask: "{{ _openwrt_network.netmask }}"
+      gateway: "{{ _openwrt_network.gateway }}"
+      dns: "{{ _openwrt_network.dns }}"
+      username: "{{ _openwrt_network.username }}"
+      password: "{{ _openwrt_network.password }}"
