@@ -1,0 +1,13 @@
+---
+- name: Configure system
+  uci:
+    command: set
+    key: system.@system[0]
+    value:
+      hostname: "{{ openwrt_system_hostname | default(omit) }}"
+      timezone: "{{ tzdata[openwrt_system_zonename] | default(omit) }}"
+      zonename: "{{ openwrt_system_zonename | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
