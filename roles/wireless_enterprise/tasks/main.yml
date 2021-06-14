@@ -8,6 +8,7 @@
   opkg:
     name: wpad
     state: present
+  notify: setup wifi
 
 - include_tasks: radio.yml
   when: openwrt_wireless_2_4g_disabled != 1

@@ -18,4 +18,4 @@ There are also variables to specify 2.4GHz or 5GHz configurations. For example, 
 
 ## References
 
-https://openwrt.org/docs/guide-user/network/wifi/basic
++ https://openwrt.org/docs/guide-user/network/wifi/basic

@@ -9,4 +9,4 @@ openwrt_system_zonename
 
 ## References
 
-https://openwrt.org/docs/guide-user/base-system/system_configuration
++ https://openwrt.org/docs/guide-user/base-system/system_configuration

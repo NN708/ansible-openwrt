@@ -13,4 +13,5 @@ There are also variables to specify 2.4GHz or 5GHz configurations. For example, 
 
 ## References
 
-https://openwrt.org/docs/guide-user/network/wifi/wireless.security.8021x
++ https://openwrt.org/docs/guide-user/network/wifi/basic#wpa_enterprise_access_point
++ https://openwrt.org/docs/guide-user/network/wifi/wireless.security.8021x
