@@ -5,8 +5,6 @@ readme: README.md
 authors:
   - NN708
 description: Ansible collection to configure your OpenWrt devices more quickly and automatically (without Python)
-license:
-  - GPL-3.0-or-later
 license_file: LICENSE
 tags:
   - openwrt
