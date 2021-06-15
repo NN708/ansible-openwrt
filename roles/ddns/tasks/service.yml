@@ -1,0 +1,20 @@
+---
+- name: Configure DDNS service
+  uci:
+    command: set
+    key: "ddns.{{ _openwrt_ddns.service }}"
+    value:
+      enabled: "{{ _openwrt_ddns.enabled }}"
+      lookup_host: "{{ _openwrt_ddns.lookup_host }}"
+      domain: "{{ _openwrt_ddns.domain }}"
+      username: "{{ _openwrt_ddns.username }}"
+      password: "{{ _openwrt_ddns.password }}"
+      interface: "{{ _openwrt_ddns.interface }}"
+      service_name: "{{ _openwrt_ddns.service_name }}"
+      update_url: "{{ _openwrt_ddns.update_url }}"
+      update_script: "{{ _openwrt_ddns.update_script }}"
+      ip_source: "{{ _openwrt_ddns.ip_source }}"
+      ip_network: "{{ _openwrt_ddns.ip_network }}"
+      ip_url: "{{ _openwrt_ddns.ip_url }}"
+      ip_interface: "{{ _openwrt_ddns.ip_interface }}"
+      ip_script: "{{ _openwrt_ddns.ip_script }}"

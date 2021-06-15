@@ -1,0 +1,39 @@
+# nn708.openwrt.ddns
+
+## Role Variables
+
+Name | Default
+--- | ---
+openwrt_ddns_ipv4_enabled | 0
+openwrt_ddns_ipv4_lookup_host
+openwrt_ddns_ipv4_domain
+openwrt_ddns_ipv4_username
+openwrt_ddns_ipv4_password
+openwrt_ddns_ipv4_interface
+openwrt_ddns_ipv4_service_name
+openwrt_ddns_ipv4_update_url
+openwrt_ddns_ipv4_update_script
+openwrt_ddns_ipv4_ip_source
+openwrt_ddns_ipv4_ip_network
+openwrt_ddns_ipv4_ip_url
+openwrt_ddns_ipv4_ip_interface
+openwrt_ddns_ipv4_ip_script
+openwrt_ddns_ipv6_enabled | 0
+openwrt_ddns_ipv6_lookup_host
+openwrt_ddns_ipv6_domain
+openwrt_ddns_ipv6_username
+openwrt_ddns_ipv6_password
+openwrt_ddns_ipv6_interface
+openwrt_ddns_ipv6_service_name
+openwrt_ddns_ipv6_update_url
+openwrt_ddns_ipv6_update_script
+openwrt_ddns_ipv6_ip_source
+openwrt_ddns_ipv6_ip_network
+openwrt_ddns_ipv6_ip_url
+openwrt_ddns_ipv6_ip_interface
+openwrt_ddns_ipv6_ip_script
+
+## References
+
++ https://openwrt.org/docs/guide-user/base-system/ddns
++ https://openwrt.org/docs/guide-user/services/ddns/client
