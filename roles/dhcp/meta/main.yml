@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  description: Configure DNS and DHCP settings
+dependencies:
+  - gekmihesg.openwrt
+collections:
+  - ansible.legacy

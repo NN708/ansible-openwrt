@@ -1,0 +1,10 @@
+---
+- name: Configure DHCP server
+  uci:
+    command: set
+    key: "dhcp.{{ _openwrt_dhcp.dhcp }}"
+    value:
+      ignore: "{{ _openwrt_dhcp.ignore }}"
+      start: "{{ _openwrt_dhcp.start }}"
+      limit: "{{ _openwrt_dhcp.limit }}"
+      leasetime: "{{ _openwrt_dhcp.leasetime }}"

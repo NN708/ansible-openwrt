@@ -23,6 +23,7 @@ Ansible collection to configure your OpenWrt devices more quickly and automatica
 This collection includes these roles:
 
 + [nn708.openwrt.ddns](https://github.com/NN708/ansible-openwrt/tree/master/roles/ddns)
++ [nn708.openwrt.dhcp](https://github.com/NN708/ansible-openwrt/tree/master/roles/dhcp)
 + [nn708.openwrt.network](https://github.com/NN708/ansible-openwrt/tree/master/roles/network)
 + [nn708.openwrt.system](https://github.com/NN708/ansible-openwrt/tree/master/roles/system)
 + [nn708.openwrt.wireless](https://github.com/NN708/ansible-openwrt/tree/master/roles/wireless)
@@ -43,7 +44,7 @@ This is a minimal working example to set up a basic wireless router:
     openwrt_network_wan_password: my-passwd
     openwrt_system_zonename: Asia/Shanghai
     openwrt_wireless_country: CN
-    openwrt_wireless_ssid: my-wi-fi
+    openwrt_wireless_ssid: my-wifi
     openwrt_wireless_encryption: psk2
     openwrt_wireless_key: my-passwd
 

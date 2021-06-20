@@ -1,0 +1,48 @@
+---
+- name: Configure DNS server
+  uci:
+    command: set
+    key: "dhcp.@dnsmasq[0]"
+    value:
+      rebind_protection: "{{ openwrt_dnsmasq_rebind_protection | default(omit) }}"
+      rebind_localhost: "{{ openwrt_dnsmasq_rebind_localhost | default(omit) }}"
+      rebind_domain: "{{ openwrt_dnsmasq_rebind_domain | default(omit) }}"
+
+- include_tasks: dhcp.yml
+  vars:
+    _openwrt_dhcp:
+      dhcp: lan
+      ignore: "{{ openwrt_dhcp_lan_ignore | default(omit) }}"
+      start: "{{ openwrt_dhcp_lan_start | default(omit) }}"
+      limit: "{{ openwrt_dhcp_lan_limit | default(omit) }}"
+      leasetime: "{{ openwrt_dhcp_lan_leasetime | default(omit) }}"
+
+- include_tasks: dhcp.yml
+  vars:
+    _openwrt_dhcp:
+      dhcp: wan
+      ignore: "{{ openwrt_dhcp_wan_ignore | default(omit) }}"
+      start: "{{ openwrt_dhcp_wan_start | default(omit) }}"
+      limit: "{{ openwrt_dhcp_wan_limit | default(omit) }}"
+      leasetime: "{{ openwrt_dhcp_wan_leasetime | default(omit) }}"
+
+- name: Configure DHCP static leases
+  when: openwrt_dhcp_static_leases is defined
+  with_items: "{{ openwrt_dhcp_static_leases }}"
+  uci:
+    command: section
+    config: dhcp
+    type: host
+    find:
+      name: "{{ item.name }}"
+    value:
+      mac: "{{ item.mac | default(omit) }}"
+      ip: "{{ item.ip | default(omit) }}"
+      leasetime: "{{ item.leasetime | default(omit) }}"
+      duid: "{{ item.duid | default(omit) }}"
+      hostid: "{{ item.hostid | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: restart dhcp
