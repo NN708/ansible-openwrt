@@ -9,6 +9,7 @@ Name | Default
 openwrt_dnsmasq_rebind_protection
 openwrt_dnsmasq_rebind_localhost
 openwrt_dnsmasq_rebind_domain
+openwrt_dnsmasq_server
 openwrt_dhcp_lan_ignore
 openwrt_dhcp_lan_start
 openwrt_dhcp_lan_limit

@@ -7,6 +7,7 @@
       rebind_protection: "{{ openwrt_dnsmasq_rebind_protection | default(omit) }}"
       rebind_localhost: "{{ openwrt_dnsmasq_rebind_localhost | default(omit) }}"
       rebind_domain: "{{ openwrt_dnsmasq_rebind_domain | default(omit) }}"
+      server: "{{ openwrt_dnsmasq_server | default(omit) }}"
 
 - include_tasks: dhcp.yml
   vars:
