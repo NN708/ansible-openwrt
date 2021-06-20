@@ -22,4 +22,6 @@
       key: "{{ _openwrt_wireless.key }}"
       hidden: "{{ _openwrt_wireless.hidden }}"
       isolate: "{{ _openwrt_wireless.isolate }}"
+      macfilter: "{{ _openwrt_wireless.macfilter }}"
+      maclist: "{{ _openwrt_wireless.maclist }}"
       ieee80211r: "{{ _openwrt_wireless.ieee80211r }}"

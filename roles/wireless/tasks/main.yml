@@ -12,6 +12,8 @@
       key: "{{ openwrt_wireless_2_4g_key }}"
       hidden: "{{ openwrt_wireless_2_4g_hidden }}"
       isolate: "{{ openwrt_wireless_2_4g_isolate }}"
+      macfilter: "{{ openwrt_wireless_2_4g_macfilter }}"
+      maclist: "{{ openwrt_wireless_2_4g_maclist }}"
       ieee80211r: "{{ openwrt_wireless_2_4g_ieee80211r }}"
 
 - include_tasks: radio.yml
@@ -27,6 +29,8 @@
       key: "{{ openwrt_wireless_5g_key }}"
       hidden: "{{ openwrt_wireless_5g_hidden }}"
       isolate: "{{ openwrt_wireless_5g_isolate }}"
+      macfilter: "{{ openwrt_wireless_5g_macfilter }}"
+      maclist: "{{ openwrt_wireless_5g_maclist }}"
       ieee80211r: "{{ openwrt_wireless_5g_ieee80211r }}"
 
 - name: Commit changes

@@ -25,5 +25,11 @@ openwrt_wireless_5g_hidden: "{{ openwrt_wireless_hidden | default(omit) }}"
 openwrt_wireless_2_4g_isolate: "{{ openwrt_wireless_isolate | default(omit) }}"
 openwrt_wireless_5g_isolate: "{{ openwrt_wireless_isolate | default(omit) }}"
 
+openwrt_wireless_2_4g_macfilter: "{{ openwrt_wireless_macfilter | default(omit) }}"
+openwrt_wireless_5g_macfilter: "{{ openwrt_wireless_macfilter | default(omit) }}"
+
+openwrt_wireless_2_4g_maclist: "{{ openwrt_wireless_maclist | default(omit) }}"
+openwrt_wireless_5g_maclist: "{{ openwrt_wireless_maclist | default(omit) }}"
+
 openwrt_wireless_2_4g_ieee80211r: "{{ openwrt_wireless_ieee80211r | default(omit) }}"
 openwrt_wireless_5g_ieee80211r: "{{ openwrt_wireless_ieee80211r | default(omit) }}"
