@@ -1,3 +1,43 @@
 ---
-openwrt_ddns_ipv4_enabled: 0
-openwrt_ddns_ipv6_enabled: 0
+openwrt_ddns_enabled: 0
+openwrt_ddns_ipv4_enabled: "{{ openwrt_ddns_enabled }}"
+openwrt_ddns_ipv6_enabled: "{{ openwrt_ddns_enabled }}"
+
+openwrt_ddns_ipv4_lookup_host: "{{ openwrt_ddns_lookup_host | default(omit) }}"
+openwrt_ddns_ipv6_lookup_host: "{{ openwrt_ddns_lookup_host | default(omit) }}"
+
+openwrt_ddns_ipv4_domain: "{{ openwrt_ddns_domain | default(omit) }}"
+openwrt_ddns_ipv6_domain: "{{ openwrt_ddns_domain | default(omit) }}"
+
+openwrt_ddns_ipv4_username: "{{ openwrt_ddns_username | default(omit) }}"
+openwrt_ddns_ipv6_username: "{{ openwrt_ddns_username | default(omit) }}"
+
+openwrt_ddns_ipv4_password: "{{ openwrt_ddns_password | default(omit) }}"
+openwrt_ddns_ipv6_password: "{{ openwrt_ddns_password | default(omit) }}"
+
+openwrt_ddns_ipv4_interface: "{{ openwrt_ddns_interface | default(omit) }}"
+openwrt_ddns_ipv6_interface: "{{ openwrt_ddns_interface | default(omit) }}"
+
+openwrt_ddns_ipv4_service_name: "{{ openwrt_ddns_service_name | default(omit) }}"
+openwrt_ddns_ipv6_service_name: "{{ openwrt_ddns_service_name | default(omit) }}"
+
+openwrt_ddns_ipv4_update_url: "{{ openwrt_ddns_update_url | default(omit) }}"
+openwrt_ddns_ipv6_update_url: "{{ openwrt_ddns_update_url | default(omit) }}"
+
+openwrt_ddns_ipv4_update_script: "{{ openwrt_ddns_update_script | default(omit) }}"
+openwrt_ddns_ipv6_update_script: "{{ openwrt_ddns_update_script | default(omit) }}"
+
+openwrt_ddns_ipv4_ip_source: "{{ openwrt_ddns_ip_source | default(omit) }}"
+openwrt_ddns_ipv6_ip_source: "{{ openwrt_ddns_ip_source | default(omit) }}"
+
+openwrt_ddns_ipv4_ip_network: "{{ openwrt_ddns_ip_network | default(omit) }}"
+openwrt_ddns_ipv6_ip_network: "{{ openwrt_ddns_ip_network | default(omit) }}"
+
+openwrt_ddns_ipv4_ip_url: "{{ openwrt_ddns_ip_url | default(omit) }}"
+openwrt_ddns_ipv6_ip_url: "{{ openwrt_ddns_ip_url | default(omit) }}"
+
+openwrt_ddns_ipv4_ip_interface: "{{ openwrt_ddns_ip_interface | default(omit) }}"
+openwrt_ddns_ipv6_ip_interface: "{{ openwrt_ddns_ip_interface | default(omit) }}"
+
+openwrt_ddns_ipv4_ip_script: "{{ openwrt_ddns_ip_script | default(omit) }}"
+openwrt_ddns_ipv6_ip_script: "{{ openwrt_ddns_ip_script | default(omit) }}"
