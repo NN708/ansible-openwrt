@@ -1,5 +1,7 @@
 # nn708.openwrt.network
 
+Configure network settings.
+
 ## Role Variables
 
 Name | Default

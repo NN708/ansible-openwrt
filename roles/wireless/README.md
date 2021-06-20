@@ -1,5 +1,7 @@
 # nn708.openwrt.wireless
 
+Configure Wi-Fi settings.
+
 ## Role Variables
 
 Name | Default

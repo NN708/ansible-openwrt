@@ -1,4 +1,6 @@
 ---
+galaxy_info:
+  description: Configure Wi-Fi settings
 dependencies:
   - gekmihesg.openwrt
 collections:

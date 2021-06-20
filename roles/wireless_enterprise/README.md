@@ -1,5 +1,7 @@
 # nn708.openwrt.wireless_enterprise
 
+Configure WPA Enterprise Wi-Fi security (802.1X).
+
 ## Role Variables
 
 Name | Default

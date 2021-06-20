@@ -1,4 +1,6 @@
 ---
+galaxy_info:
+  description: Configure WPA Enterprise Wi-Fi security (802.1X)
 dependencies:
   - gekmihesg.openwrt
 collections:

@@ -1,4 +1,6 @@
 ---
+galaxy_info:
+  description: Configure system settings
 dependencies:
   - gekmihesg.openwrt
 collections:

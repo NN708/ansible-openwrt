@@ -1,5 +1,7 @@
 # nn708.openwrt.ddns
 
+Install and configure dynamic DNS (DDNS) service.
+
 ## Role Variables
 
 Name | Default
