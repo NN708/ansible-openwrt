@@ -1,6 +1,6 @@
 # nn708.openwrt.wireguard
 
-Configure WireGuard VPN settings.
+Install and configure WireGuard VPN.
 
 ## Role Variables
 

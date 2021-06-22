@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  description: Configure WireGuard VPN settings
+  description: Install and configure WireGuard VPN
 dependencies:
   - gekmihesg.openwrt
 collections:
