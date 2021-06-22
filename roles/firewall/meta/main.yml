@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  description: Configure firewall settings
+dependencies:
+  - gekmihesg.openwrt
+collections:
+  - ansible.legacy

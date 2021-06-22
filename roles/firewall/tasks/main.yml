@@ -1,0 +1,47 @@
+---
+- name: Configure traffic rules
+  when: openwrt_firewall_rules is defined
+  with_items: "{{ openwrt_firewall_rules }}"
+  uci:
+    command: section
+    config: firewall
+    type: rule
+    find:
+      name: "{{ item.name }}"
+    value:
+      src: "{{ item.src | default(omit) }}"
+      src_ip: "{{ item.src_ip | default(omit) }}"
+      src_mac: "{{ item.src_mac | default(omit) }}"
+      src_port: "{{ item.src_port | default(omit) }}"
+      dest: "{{ item.dest | default(omit) }}"
+      dest_ip: "{{ item.dest_ip | default(omit) }}"
+      dest_port: "{{ item.dest_port | default(omit) }}"
+      proto: "{{ item.proto | default(omit) }}"
+      target: "{{ item.target | default(omit) }}"
+
+- name: Configure port forwards
+  when: openwrt_firewall_redirects is defined
+  with_items: "{{ openwrt_firewall_redirects }}"
+  uci:
+    command: section
+    config: firewall
+    type: redirect
+    find:
+      name: "{{ item.name }}"
+    value:
+      src: "{{ item.src | default(omit) }}"
+      src_ip: "{{ item.src_ip | default(omit) }}"
+      src_dip: "{{ item.src_dip | default(omit) }}"
+      src_mac: "{{ item.src_mac | default(omit) }}"
+      src_port: "{{ item.src_port | default(omit) }}"
+      src_dport: "{{ item.src_dport | default(omit) }}"
+      dest: "{{ item.dest | default(omit) }}"
+      dest_ip: "{{ item.dest_ip | default(omit) }}"
+      dest_port: "{{ item.dest_port | default(omit) }}"
+      proto: "{{ item.proto | default(omit) }}"
+      target: "{{ item.target | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: restart firewall
