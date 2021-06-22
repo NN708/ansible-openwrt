@@ -1,0 +1,26 @@
+---
+- name: Stop and disable DHCP and firewall services
+  with_items:
+    - dnsmasq
+    - odhcpd
+    - firewall
+  service:
+    name: "{{ item }}"
+    state: stopped
+    enabled: no
+
+- name: Configure IPv6 for AP
+  uci:
+    command: section
+    config: network
+    type: interface
+    name: lan6
+    value:
+      proto: dhcpv6
+      ifname: @lan
+      reqprefix: no
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: reload network

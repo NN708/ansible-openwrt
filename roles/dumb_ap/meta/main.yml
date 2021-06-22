@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  description: Configure network and services for dumb access point
+dependencies:
+  - gekmihesg.openwrt
+collections:
+  - ansible.legacy

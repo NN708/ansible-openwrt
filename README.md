@@ -24,6 +24,7 @@ This collection includes these roles:
 
 + [nn708.openwrt.ddns](https://github.com/NN708/ansible-openwrt/tree/master/roles/ddns)
 + [nn708.openwrt.dhcp](https://github.com/NN708/ansible-openwrt/tree/master/roles/dhcp)
++ [nn708.openwrt.dumb_ap](https://github.com/NN708/ansible-openwrt/tree/master/roles/dumb_ap)
 + [nn708.openwrt.firewall](https://github.com/NN708/ansible-openwrt/tree/master/roles/firewall)
 + [nn708.openwrt.network](https://github.com/NN708/ansible-openwrt/tree/master/roles/network)
 + [nn708.openwrt.system](https://github.com/NN708/ansible-openwrt/tree/master/roles/system)
