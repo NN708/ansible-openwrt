@@ -1,0 +1,7 @@
+---
+galaxy_info:
+  description: Configure WireGuard VPN settings
+dependencies:
+  - gekmihesg.openwrt
+collections:
+  - ansible.legacy

@@ -1,0 +1,3 @@
+---
+- include: ../../firewall/handlers/main.yml
+- include: ../../network/handlers/main.yml

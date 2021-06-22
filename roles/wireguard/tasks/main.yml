@@ -1,0 +1,75 @@
+---
+- name: Install WireGuard
+  opkg:
+    name: wireguard
+    state: present
+
+- name: Find firewall zone
+  uci:
+    command: find
+    config: firewall
+    type: zone
+    find:
+      name: "{{ openwrt_wireguard_firewall_zone }}"
+  register: _firewall_zone
+
+- name: Configure firewall zone
+  uci:
+    command: add_list
+    key: "firewall.{{ _firewall_zone.result }}.network"
+    value: "{{ openwrt_wireguard_interface_name }}"
+    unique: true
+
+- name: Open WireGuard port to WAN
+  when: openwrt_wireguard_listen_port is defined
+  uci:
+    command: section
+    config: firewall
+    type: rule
+    find:
+      name: "Allow-WireGuard"
+    value:
+      src: wan
+      dest_port: "{{ openwrt_wireguard_listen_port }}"
+      proto: udp
+      target: ACCEPT
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: restart firewall
+
+- name: Configure WireGuard interface
+  uci:
+    command: section
+    config: network
+    type: interface
+    name: "{{ openwrt_wireguard_interface_name }}"
+    value:
+      proto: wireguard
+      private_key: "{{ openwrt_wireguard_private_key | default(omit) }}"
+      listen_port: "{{ openwrt_wireguard_listen_port | default(omit) }}"
+      addresses: "{{ openwrt_wireguard_addresses | default(omit) }}"
+
+- name: Configure WireGuard peers
+  when: openwrt_wireguard_peers is defined
+  with_items: "{{ openwrt_wireguard_peers }}"
+  uci:
+    command: section
+    config: network
+    type: "wireguard_{{ openwrt_wireguard_interface_name }}"
+    find:
+      description: "{{ item.description }}"
+    value:
+      public_key: "{{ item.public_key | default(omit) }}"
+      preshared_key: "{{ item.preshared_key | default(omit) }}"
+      allowed_ips: "{{ item.allowed_ips | default(omit) }}"
+      route_allowed_ips: "{{ item.route_allowed_ips | default(omit) }}"
+      endpoint_host: "{{ item.endpoint_host | default(omit) }}"
+      endpoint_port: "{{ item.endpoint_port | default(omit) }}"
+      persistent_keepalive: "{{ item.persistent_keepalive | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: reload network
