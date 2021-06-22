@@ -1,0 +1,5 @@
+---
+- name: reload system
+  service:
+    name: system
+    state: reloaded

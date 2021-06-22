@@ -11,3 +11,4 @@
 - name: Commit changes
   uci:
     command: commit
+  notify: reload system
