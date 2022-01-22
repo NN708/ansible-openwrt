@@ -1,12 +1,12 @@
 ---
 - name: Remove wpad-basic
   opkg:
-    name: wpad-basic
+    name: wpad-basic-wolfssl
     state: absent
 
 - name: Install wpad
   opkg:
-    name: wpad
+    name: wpad-wolfssl
     state: present
   notify: setup wifi
 
