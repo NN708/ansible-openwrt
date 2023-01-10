@@ -42,6 +42,11 @@
       leasetime: "{{ item.leasetime | default(omit) }}"
       duid: "{{ item.duid | default(omit) }}"
       hostid: "{{ item.hostid | default(omit) }}"
+      tag: "{{ item.tag | default(omit) }}"
+      match_tag: "{{ item.match_tag | default(omit) }}"
+      dns: "{{ item.dns | default(omit) }}"
+      broadcast: "{{ item.broadcast | default(omit) }}"
+      instance: "{{ item.instance | default(omit) }}"
 
 - name: Commit changes
   uci:
