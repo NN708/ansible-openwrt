@@ -4,7 +4,7 @@
     name: ddns-scripts
     state: present
 
-- name: Install ddns-scripts_no-ip_com
+- name: Install ddns-scripts-noip
   when: >
     (openwrt_ddns_ipv4_service_name is defined and openwrt_ddns_ipv4_service_name == "no-ip.com")
     or (openwrt_ddns_ipv6_service_name is defined and openwrt_ddns_ipv6_service_name == "no-ip.com")
