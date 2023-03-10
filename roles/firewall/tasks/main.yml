@@ -18,6 +18,7 @@
       dest_port: "{{ item.dest_port | default(omit) }}"
       proto: "{{ item.proto | default(omit) }}"
       target: "{{ item.target | default(omit) }}"
+      family: "{{ item.family | default{omit) }}"
 
 - name: Configure port forwards
   when: openwrt_firewall_redirects is defined
@@ -40,6 +41,7 @@
       dest_port: "{{ item.dest_port | default(omit) }}"
       proto: "{{ item.proto | default(omit) }}"
       target: "{{ item.target | default(omit) }}"
+      family: "{{ item.family | default(omit) }}"
 
 - name: Commit changes
   uci:
