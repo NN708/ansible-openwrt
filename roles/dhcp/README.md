@@ -14,10 +14,14 @@ openwrt_dhcp_lan_ignore
 openwrt_dhcp_lan_start
 openwrt_dhcp_lan_limit
 openwrt_dhcp_lan_leasetime
+openwrt_dhcp_lan_dhcp_option
+openwrt_dhcp_lan_dns
 openwrt_dhcp_wan_ignore
 openwrt_dhcp_wan_start
 openwrt_dhcp_wan_limit
 openwrt_dhcp_wan_leasetime
+openwrt_dhcp_wan_dhcp_option
+openwrt_dhcp_wan_dns
 openwrt_dhcp_static_leases
 
 ## References

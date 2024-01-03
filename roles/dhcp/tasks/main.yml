@@ -17,6 +17,8 @@
       start: "{{ openwrt_dhcp_lan_start | default(omit) }}"
       limit: "{{ openwrt_dhcp_lan_limit | default(omit) }}"
       leasetime: "{{ openwrt_dhcp_lan_leasetime | default(omit) }}"
+      dhcp_option: "{{ openwrt_dhcp_lan_dhcp_option | default(omit) }}"
+      dns: "{{ openwrt_dhcp_lan_dns | default(omit) }}"
 
 - include_tasks: dhcp.yml
   vars:
@@ -26,6 +28,8 @@
       start: "{{ openwrt_dhcp_wan_start | default(omit) }}"
       limit: "{{ openwrt_dhcp_wan_limit | default(omit) }}"
       leasetime: "{{ openwrt_dhcp_wan_leasetime | default(omit) }}"
+      dhcp_option: "{{ openwrt_dhcp_wan_dhcp_option | default(omit) }}"
+      dns: "{{ openwrt_dhcp_wan_dns | default(omit) }}"
 
 - name: Configure DHCP static leases
   when: openwrt_dhcp_static_leases is defined

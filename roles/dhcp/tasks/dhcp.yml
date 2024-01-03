@@ -8,3 +8,5 @@
       start: "{{ _openwrt_dhcp.start }}"
       limit: "{{ _openwrt_dhcp.limit }}"
       leasetime: "{{ _openwrt_dhcp.leasetime }}"
+      dhcp_option: "{{ _openwrt_dhcp.dhcp_option }}"
+      dns: "{{ _openwrt_dhcp.dns }}"
