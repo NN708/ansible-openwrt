@@ -1,7 +1,7 @@
 ---
 - name: Install WireGuard
   opkg:
-    name: wireguard
+    name: wireguard-tools
     state: present
 
 - name: Find firewall zone

@@ -17,7 +17,7 @@
     name: lan6
     value:
       proto: dhcpv6
-      ifname: "@lan"
+      device: "@lan"
       reqprefix: "no"
 
 - name: Commit changes
