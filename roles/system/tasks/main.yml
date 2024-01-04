@@ -12,3 +12,15 @@
   uci:
     command: commit
   notify: reload system
+
+- name: Configure NTP service
+  uci:
+    command: set
+    key: system.ntp
+    value:
+      enable_server: "{{ openwrt_ntp_enable_server | default(omit) }}"
+
+- name: Commit changes
+  uci:
+    command: commit
+  notify: restart sysntpd

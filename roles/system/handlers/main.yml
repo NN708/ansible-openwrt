@@ -3,3 +3,8 @@
   service:
     name: system
     state: reloaded
+
+- name: restart sysntpd
+  service:
+    name: sysntpd
+    state: restarted
